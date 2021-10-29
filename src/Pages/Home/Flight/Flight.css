@@ -1,0 +1,13 @@
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto
+}
+.wrapper form a {
+    color: #333
+}
+.wrapper form .form-group {
+    padding-bottom: .9rem
+}
+.wrapper form {
+    padding: 40px 50px
+}
