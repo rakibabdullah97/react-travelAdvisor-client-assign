@@ -53,13 +53,14 @@ const Booking = () => {
     return (
         <div className='container'>
             <div className='row g-5'>
-                <h1 className='text-center text-danger pb-5'>Book Your Trip Now <FaBook/></h1>
+                <h1 className='text-center text-danger pb-5 '>Book Your Trip Now <FaBook/></h1>
                 <div className="col-md-4 " >
                     <div className="card ">
                         <img src={deal?.img} className="card-img-top" alt="..." />
                         <div className="card-body aline-item-center">
-                            <h5 className="card-title">{deal.name}</h5>
-                            <p className="card-text">{deal.description}</p>
+                            <h5 className="card-title">Name:{deal.name}</h5>
+                            <p className="card-text">Info: {deal.info}</p>
+                            <p className="card-text">Description: {deal.description}</p>
                             <h5 className="card-title">Cost:${deal.price}</h5>
                         </div>
                     </div>
@@ -88,6 +89,9 @@ const Booking = () => {
                             <Form.Control onChange={handleDate} placeholder="date" type="date" />
                         </Form.Group>
                         <button onClick={handleBooking} className="btn btn-success">Book My Trip</button>
+                        <Link to='/mybooking'>
+                            <button className='btn btn-primary m-2'>My Bookings</button>
+                        </Link>
                     </Form>
                 </div>
             </div>

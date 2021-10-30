@@ -2,6 +2,7 @@ import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
@@ -79,6 +80,9 @@ const AddDeal = () => {
                             <Form.Control onChange={handleImage} type="text" placeholder="Image URL" />
                         </Form.Group>
                         <button onClick={handleAddDeal} className='btn btn btn-danger'>Add Deal</button>
+                        <Link to='/home'>
+                        <button  className='btn btn btn-primary m-2'>Go Home</button>
+                        </Link>
                     </div>
                 </div>
             </div>
