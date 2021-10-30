@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Deal.css'
 
 const Deal = ({ deal }) => {
-    const { name, img, info, id, price } = deal
+    const { name, img, info, _id,} = deal
     return (
         <div>
             <div className="card deal-card">
@@ -13,7 +13,7 @@ const Deal = ({ deal }) => {
                     <p className="card-text">{info}</p>
                     {/* <h5 className='text-danger'> $ {price}</h5> */}
 
-                    <Link to={`./booking/${id}`}>
+                    <Link to={`./booking/${_id}`}>
                         <button type="button" className="btn btn-danger">Book Now</button>
                     </Link>
                 </div>

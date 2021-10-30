@@ -1,9 +1,12 @@
 import React from 'react';
 import './Flight.css'
+import { FaPaperPlane } from 'react-icons/fa'
+
+
 const Flight = () => {
     return (
-        <div>
-        <h1 className='text-center pt-4'>Check Out The Cheapest Flight For You </h1>
+        <div className='mt-5'>
+        <h1 className='text-center pt-4 text-danger'>Check Out The Cheapest Flight For You <FaPaperPlane /> </h1>
             <div class="wrapper bg-white container">
                 <form action="#">
                     <div class="form-group d-sm-flex margin">

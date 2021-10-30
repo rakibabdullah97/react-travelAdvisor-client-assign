@@ -10,17 +10,44 @@ const Booking = () => {
     const { dealId } = useParams()
     const [deal, setDeal] = useState({})
     const { user } = useAuth()
+    const [booking, setBooking] = useState({})
+
+    const handleDestination = e => {
+        const bookDestination = { ...booking }
+        bookDestination.destination = e.target.value
+        setBooking(bookDestination)
+    }
+    const handleDate = e => {
+        const bookingDate = { ...booking }
+        bookingDate.date = e.target.value
+        setBooking(bookingDate)
+    }
+    const handleBooking = e => {
+        const newBooking = booking
+        newBooking.name = user.displayName
+        newBooking.email = user.email
+        setBooking(newBooking)
+
+        fetch('http://localhost:5000/addbooking', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(booking)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('booking Successful')
+                }
+            })
+        e.preventDefault()
+    }
 
     useEffect(() => {
-        fetch('/deals.json')
+        fetch(`http://localhost:5000/deals/${dealId}`)
             .then(res => res.json())
-            .then(data => {
-                const getDeal = data.find(d => (d.id) == +dealId)
-                setDeal(getDeal)
-            })
+            .then(data => setDeal(data))
     }, [])
-  
 
+    console.log(deal)
     return (
         <div className='container'>
             <div className='row g-5'>
@@ -44,8 +71,8 @@ const Booking = () => {
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Country</Form.Label>
-                                <Form.Control type="text" placeholder="Country" />
+                                <Form.Label>Destination</Form.Label>
+                                <Form.Control onChange={handleDestination} type="text" placeholder="Destination" />
                             </Form.Group>
                         </Row>
 
@@ -56,12 +83,9 @@ const Booking = () => {
 
                         <Form.Group className="mb-3" controlId="formGridAddress2">
                             <Form.Label>Pick A Date</Form.Label>
-                            <Form.Control placeholder="date" type="date" />
+                            <Form.Control onChange={handleDate} placeholder="date" type="date" />
                         </Form.Group>
-
-                        <Link to='/'>
-                            <a href="p" className="btn btn-success">Book Now</a>
-                        </Link>
+                        <button onClick={handleBooking} className="btn btn-success">Book My Trip</button>
                     </Form>
                 </div>
             </div>
