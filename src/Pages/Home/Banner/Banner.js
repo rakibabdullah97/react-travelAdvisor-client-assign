@@ -2,6 +2,7 @@ import React from 'react';
 import banner1 from '../../../banner/116450437-travel-to-japan-time-to-travel-banner-with-airplane-and-hand-draw-doodles-on-the-background-vector-i.jpg'
 import banner2 from '../../../banner/34925939-travel-banner-flat-vector-illustration-.jpg'
 import banner3 from '../../../banner/depositphotos_197476176-stock-illustration-travel-world-web-banner-design.jpg'
+
 const Banner = () => {
     return (
         <div>
@@ -22,13 +23,13 @@ const Banner = () => {
                     <div className="carousel-item">
                         <img style={{ height: "80vh" }} src={banner2} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <h2 className='text-dark'>Get The Best Vacation Deal </h2>
+                            <h1 className='text-warning'>Get The Best Vacation Deal </h1>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img style={{ height: "80vh" }} src={banner3} className="d-block w-100" alt="..." />
                         <div className="carousel-caption d-none d-md-block">
-                            <h2 className='text-dark'>Check Out On Going Package Deals</h2>
+                            <h2 className='text-success'>Check Out On Going Package Deals</h2>
                         </div>
                     </div>
                 </div>

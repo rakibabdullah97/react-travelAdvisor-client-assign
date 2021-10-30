@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
-import { FaChartLine } from 'react-icons/fa'
+import { FaChartLine, FaCut } from 'react-icons/fa'
 
 const MyBooking = () => {
     const [myBooking, setMyBooking] = useState([])
@@ -33,16 +33,16 @@ const MyBooking = () => {
     }
     return (
         <div className='container'>
-            <h1 className='mt-5 text-center m-2 text-danger'>Manage Your Booking Here <FaChartLine/> </h1>
+            <h1 className='mt-5 text-center m-2 text-danger'>Manage Your Bookings Here <FaChartLine /> </h1>
             <div className="table-responsive">
                 <Table className="mb-5">
                     <thead className="table-danger">
                         <tr>
                             <th>#</th>
                             <th>Deal Title</th>
-                            <th>Deal Destination</th>
-                            <th>Event Email</th>
-                            <th>Event Status</th>
+                            <th>Destination</th>
+                            <th>User Email</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -53,13 +53,14 @@ const MyBooking = () => {
                                 <td>{pd.name}</td>
                                 <td>{pd.destination}</td>
                                 <td>{pd.email}</td>
-                                <td>{pd.email}</td>
-                                <button
+                                <td>{pd.date}</td>
+                                <td><button
                                     onClick={() => handleDelete(pd._id)}
-                                    className="btn bg-danger m-2 text-white p-2"
+                                    className="btn bg-danger text-white "
                                 >
                                     Delete Booking
-                                </button>
+                                    <FaCut />
+                                </button></td>
                             </tr>
                         </tbody>
                     ))}

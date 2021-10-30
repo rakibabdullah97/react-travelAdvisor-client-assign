@@ -17,8 +17,8 @@ const Deals = () => {
     return (
         <>
             {
-                (deals.length !== 0) ? <div className='container'>
-                    <h1 className='text-center text-danger  my-5'> Our On Going Hot Deals <FaFire /></h1>
+                (deals.length !== 0) ? <div className='container mb-5'>
+                    <h1 className='text-center text-danger my-5 fw-bold'> Our On Going Hot Deals <FaFire /></h1>
                     <div className=' row row-cols-1 row-cols-md-3 g-4'>
                         {
                             deals.map(deal => <Deal

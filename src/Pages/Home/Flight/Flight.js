@@ -5,8 +5,8 @@ import { FaPaperPlane } from 'react-icons/fa'
 
 const Flight = () => {
     return (
-        <div className='mt-5'>
-        <h1 className='text-center pt-4 text-danger'>Check Out The Cheapest Flight For You <FaPaperPlane /> </h1>
+        <div className=' pb-5 flight-booking'>
+        <h1 className='text-center fw-bold pt-2 text-dark'>Check Out The Cheapest Flight For You <FaPaperPlane /> </h1>
             <div class="wrapper bg-white container">
                 <form action="#">
                     <div class="form-group d-sm-flex margin">

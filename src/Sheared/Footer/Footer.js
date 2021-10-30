@@ -1,8 +1,10 @@
 import React from 'react';
+import './Footer.css'
+
 
 const Footer = () => {
     return (
-        <div className=" footer  bg-danger mt-3">
+        <div className=" footer bg-danger mt-3">
             <div className="container text-start py-3">
                 <div className="row ">
                     <div className="col-md-5">

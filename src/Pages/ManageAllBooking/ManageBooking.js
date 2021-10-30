@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { FaChartLine } from 'react-icons/fa'
+import { FaChartLine, FaCut } from 'react-icons/fa'
 
 
 const ManageBooking = () => {
@@ -31,16 +31,16 @@ const ManageBooking = () => {
     }
     return (
         <div className='container'>
-            <h1 className='text-center text-danger mt-5'>Manage All the Bookings Here <FaChartLine/> </h1>
+            <h1 className='text-center text-danger mt-5'>Manage All the Bookings Here <FaChartLine /> </h1>
             <div className="table-responsive">
                 <Table className="mb-5">
                     <thead className="table-danger">
                         <tr>
                             <th>#</th>
                             <th>Deal Title</th>
-                            <th>Deal Destination</th>
-                            <th>Event Email</th>
-                            <th>Event Status</th>
+                            <th>Destination</th>
+                            <th>User Email</th>
+                            <th>Book Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -52,12 +52,13 @@ const ManageBooking = () => {
                                 <td>{pd.destination}</td>
                                 <td>{pd.email}</td>
                                 <td>{pd.email}</td>
-                                <button
+                                <td><button
                                     onClick={() => handleDelete(pd._id)}
-                                    className="btn bg-danger m-2 text-white p-2"
+                                    className="btn bg-danger text-white"
                                 >
                                     Delete Booking
-                                </button>
+                                    <FaCut />
+                                </button></td>
                             </tr>
                         </tbody>
                     ))}

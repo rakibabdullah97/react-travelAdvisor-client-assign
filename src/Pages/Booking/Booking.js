@@ -5,6 +5,8 @@ import { Col, Form, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import { FaBook} from 'react-icons/fa'
+
 
 const Booking = () => {
     const { dealId } = useParams()
@@ -51,7 +53,7 @@ const Booking = () => {
     return (
         <div className='container'>
             <div className='row g-5'>
-                <h1>this is booking {dealId} </h1>
+                <h1 className='text-center text-danger pb-5'>Book Your Trip Now <FaBook/></h1>
                 <div className="col-md-4 " >
                     <div className="card ">
                         <img src={deal?.img} className="card-img-top" alt="..." />

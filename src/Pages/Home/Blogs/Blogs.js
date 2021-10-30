@@ -4,7 +4,7 @@ import './Blog.css'
 
 const Blogs = () => {
     return (
-        <div className="container mb-5 ">
+        <div className="container mt-5 mb-5 ">
             <div className='row border pb-4 blog'>
                 <h1 className='text-center my-5'>Latest Travel  <span className='text-info'>Tips and Advice</span> </h1>
                 <div className='col-lg-5 col-12 '>
