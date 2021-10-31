@@ -7,17 +7,18 @@ const MyBooking = () => {
     const [myBooking, setMyBooking] = useState([])
     const { user } = useAuth()
 
-    //   console.log(myBooking)
+    //data fetched from server
     useEffect(() => {
-        fetch(`http://localhost:5000/mybooking/${user?.email}`)
+        fetch(`https://murmuring-shelf-42920.herokuapp.com/mybooking/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyBooking(data))
     }, [user.email])
 
+    //delete function implemented
     const handleDelete = (id) => {
         const confirm = window.confirm('Are You Sure?')
         if (confirm) {
-            fetch(`http://localhost:5000/deletebooking/${id}`, {
+            fetch(`https://murmuring-shelf-42920.herokuapp.com/deletebooking/${id}`, {
                 method: 'DELETE',
                 headers: { "content-type": "application/json" }
             })

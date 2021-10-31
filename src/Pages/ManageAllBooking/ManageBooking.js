@@ -9,13 +9,14 @@ const ManageBooking = () => {
     const [booking, setBooking] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allbooking')
+        fetch('https://murmuring-shelf-42920.herokuapp.com/allbooking')
             .then((res) => res.json())
             .then((data) => setBooking(data))
     }, [])
 
+    // delete function implemented 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deletebooking/${id}`, {
+        fetch(`https://murmuring-shelf-42920.herokuapp.com/deletebooking/${id}`, {
             method: 'DELETE',
             headers: { "content-type": "application/json" }
         })

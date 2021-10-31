@@ -34,10 +34,10 @@ const AddDeal = () => {
         newDeal.info = e.target.value;
         setDeal(newDeal)
     }
-
+// add a new deal function implemented
     const handleAddDeal = () => {
         console.log(deal)
-        fetch('http://localhost:5000/deals', {
+        fetch('https://murmuring-shelf-42920.herokuapp.com/deals', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(deal)

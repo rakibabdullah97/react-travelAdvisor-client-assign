@@ -14,7 +14,7 @@ const Deal = ({ deal }) => {
                     {/* <h5 className='text-danger'> $ {price}</h5> */}
 
                     <Link to={`./booking/${_id}`}>
-                        <button type="button" className="btn btn-danger">Book Now</button>
+                        <button type="button" className="book-btn btn btn-danger">Book Now</button>
                     </Link>
                 </div>
             </div>

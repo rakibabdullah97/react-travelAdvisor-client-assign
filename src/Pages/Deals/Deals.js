@@ -8,8 +8,9 @@ import { FaFire } from 'react-icons/fa';
 const Deals = () => {
     const [deals, setDeals] = useState([])
 
+    //data fetched from server
     useEffect(() => {
-        fetch('http://localhost:5000/deals')
+        fetch('https://murmuring-shelf-42920.herokuapp.com/deals')
             .then(res => res.json())
             .then(data => setDeals(data))
     }, [])

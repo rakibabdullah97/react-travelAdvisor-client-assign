@@ -1,4 +1,11 @@
 .deal-card{
     border-radius: 5px;
     box-shadow: 5px 5px #a7a3a3;
+    overflow: hidden;
+}
+.deal-card:hover{
+    background-color:rgb(160, 98, 221);
+}
+.book-btn:hover{
+  background-color: rgb(23, 177, 23);
 }

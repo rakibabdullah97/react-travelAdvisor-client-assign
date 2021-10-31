@@ -30,7 +30,7 @@ const Booking = () => {
         newBooking.email = user.email
         setBooking(newBooking)
 
-        fetch('http://localhost:5000/addbooking', {
+        fetch('https://murmuring-shelf-42920.herokuapp.com/addbooking', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(booking)
@@ -42,9 +42,9 @@ const Booking = () => {
             })
         e.preventDefault()
     }
-
+// single deal search by id
     useEffect(() => {
-        fetch(`http://localhost:5000/deals/${dealId}`)
+        fetch(`https://murmuring-shelf-42920.herokuapp.com/deals/${dealId}`)
             .then(res => res.json())
             .then(data => setDeal(data))
     }, [])
