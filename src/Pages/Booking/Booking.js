@@ -28,6 +28,7 @@ const Booking = () => {
         const newBooking = booking
         newBooking.name = user.displayName
         newBooking.email = user.email
+        newBooking.status = "pending..."
         setBooking(newBooking)
 
         fetch('https://murmuring-shelf-42920.herokuapp.com/addbooking', {
